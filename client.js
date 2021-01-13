@@ -21,6 +21,23 @@ const client = function() {  //was connect
     conn.write('Name: RMZ');
   });
 
+  // conn.on('connect', () => {
+  //   conn.write('Move: up');
+  //   // conn.write('Move: left');
+  //   // conn.write('Move: down');
+  // });
+
+  // conn.on('connect', () => {
+  //   setTimeout(() => {
+  //     conn.write('Move: left');
+  //   }, 1000);
+  // });
+
+  conn.on('connect', () => {
+    setInterval(() => 
+      conn.write('Move: up'), 50);
+  });
+
   return conn;
 }
 
