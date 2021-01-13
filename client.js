@@ -2,7 +2,7 @@ const net = require('net');
 
 // const connect = function() { //wouldn't work for some reason
 //would say, ReferenceError: client is not defined
-const client = function() {
+const client = function() {  //was connect
   const conn = net.createConnection({ 
     host: '135.23.222.131',
     port: 50542
@@ -12,6 +12,13 @@ const client = function() {
 
   conn.on('data', (data) => {
     console.log('', data); //server message
+  });
+  conn.on('connect', (() => {
+    console.log("Sucessfully connected to game server");
+  }))
+
+  conn.on('connect', () => {
+    conn.write('Name: RMZ');
   });
 
   return conn;
