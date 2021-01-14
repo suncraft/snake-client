@@ -1,8 +1,7 @@
 const net = require('net');
 
-// const connect = function() { //wouldn't work for some reason
-//would say, ReferenceError: client is not defined
-const client = function() {  //was connect
+
+const connect = function() {
   const conn = net.createConnection({
     host: '135.23.222.131',
     port: 50542
@@ -21,11 +20,22 @@ const client = function() {  //was connect
     conn.write('Name: RMZ');
   });
 
-  // conn.on('connect', () => {
-  //   conn.write('Move: up');
-  //   // conn.write('Move: left');
-  //   // conn.write('Move: down');
-  // });
+  return conn;
+};
+
+// const connect = client;
+
+// module.exports = client;
+module.exports = { connect };
+
+
+
+
+//  conn.on('connect', () => {
+//     conn.write('Move: up');
+//     // conn.write('Move: left');
+//     // conn.write('Move: down');
+//   });
 
   // conn.on('connect', () => {
   //   setTimeout(() => {
@@ -37,9 +47,3 @@ const client = function() {  //was connect
   //   setInterval(() =>
   //     conn.write('Move: up'), 50);
   // });
-
-  return conn;
-};
-
-// module.exports = client;
-module.exports = client;
