@@ -41,6 +41,14 @@ const handleUserInput = function(data) {
     connection.write('Move: right');
   }
 
+  if (data === 'm') {
+    connection.write('Say: HELLO!');
+  }
+
+  if (data === 'k') {
+    connection.write('Say: Sneaky sneks sneak');
+  }
+
 };
 
 
