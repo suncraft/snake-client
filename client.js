@@ -33,10 +33,10 @@ const client = function() {  //was connect
   //   }, 1000);
   // });
 
-  conn.on('connect', () => {
-    setInterval(() => 
-      conn.write('Move: up'), 50);
-  });
+  // conn.on('connect', () => {
+  //   setInterval(() => 
+  //     conn.write('Move: up'), 50);
+  // });
 
   return conn;
 }
